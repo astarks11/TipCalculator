@@ -5,7 +5,7 @@
     <string name="enterBill">Enter Total</string>
     <string name="totalPrompt">Total</string>
     <string name="enterTip">%</string>
-    <string name="total">NULL</string>
+    <string name="total"></string>
 
 
 </resources>

@@ -34,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/numberPicker"
-        android:layout_marginEnd="17dp"
+        android:layout_marginEnd="47dp"
         android:layout_marginTop="46dp"
         android:layout_below="@+id/Banner"
         android:layout_alignParentEnd="true" />
@@ -77,10 +77,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tipPrompt"
+        android:layout_marginTop="75dp"
+        android:layout_marginRight="30dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:layout_alignBaseline="@+id/billTotal"
-        android:layout_alignBottom="@+id/billTotal"
-        android:layout_toEndOf="@+id/numberPicker" />
+        android:layout_alignTop="@+id/numberPicker"
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>

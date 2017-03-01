@@ -14,6 +14,8 @@ import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
 
+import java.text.DecimalFormat;
+
 public class MainActivity extends AppCompatActivity {
 
     TextView total;
@@ -46,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
         // create number picker listener
         WheelListener wheelListener = new WheelListener();
         numPick.setOnValueChangedListener(wheelListener);
-        // set percentage to zero
-        percentage = 0;
+        // set percentage to base value
+        percentage = 12;
         // set values and selector
         numPick.setMinValue(12);
         numPick.setMaxValue(25);
@@ -71,8 +73,16 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {
-            total.setText(billTotal.getText());
-            // textOne.setText("Changed by MAGIC");
+
+            // ------------------------ calculate tip -----------------------------
+            Double percent = ((double)percentage/(double)100);
+            Double tip = percent * Double.parseDouble(billTotal.getText().toString());
+            DecimalFormat decimal = new DecimalFormat("$###,###.##");
+            decimal.applyPattern("$###,###.##");
+            String adjustedTip = decimal.format(tip);
+
+            total.setText(adjustedTip);
+            // ------------------------ calculate tip -----------------------------
         }
     }
 
